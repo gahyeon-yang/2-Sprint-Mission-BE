@@ -6,12 +6,14 @@ import {
   NotFoundError,
   InternalServerError,
 } from "./error.js";
-import Product from "./models/Products.js";
+import cors from "cors";
+// import Product from "./models/Products.js";
 
 dotenv.config();
 
 const prisma = new PrismaClient();
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
@@ -171,6 +173,15 @@ app.post(
 );
 
 app.get(
+  "/articles",
+  asyncHandler(async (req, res) => {
+    // 모든 게시글 조회
+    const articles = await prisma.article.findMany(); // 모든 게시글 가져오기
+    res.status(200).send(articles);
+  })
+);
+
+app.get(
   "/articles/:id",
   asyncHandler(async (req, res) => {
     //조회
@@ -296,4 +307,4 @@ app.get(
   })
 );
 
-app.listen(process.env.PORT || 3000, () => console.log("Server Started")); //서버 시작
+app.listen(process.env.PORT || 4000, () => console.log("Server Started")); //서버 시작

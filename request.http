@@ -1,5 +1,5 @@
 ### 상품 등록
-POST http://localhost:3000/products
+POST http://localhost:4000/products
 Content-Type: application/json
 
 {
