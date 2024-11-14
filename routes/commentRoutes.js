@@ -3,8 +3,8 @@ import {
   createComment,
   updateComment,
   deleteComment,
-  getComments,
-} from "../controllers/commentController.js";
+  getComment,
+} from "../controller/commentController.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
 const router = express.Router();
@@ -19,6 +19,6 @@ router.patch("/:id", asyncHandler(updateComment));
 router.delete("/:id", asyncHandler(deleteComment));
 
 // 댓글 조회 API
-router.get("/", asyncHandler(getComments));
+router.get("/", asyncHandler(getComment));
 
 export default router;

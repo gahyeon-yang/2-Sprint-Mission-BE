@@ -5,7 +5,7 @@ import {
   updateProduct,
   deleteProduct,
   getProductList,
-} from "../controllers/productController.js";
+} from "../controller/productController.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
 const router = express.Router();

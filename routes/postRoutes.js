@@ -5,7 +5,7 @@ import {
   getArticle,
   updateArticle,
   deleteArticle,
-} from "../controllers/postController.js";
+} from "../controller/postController.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
 const router = express.Router();

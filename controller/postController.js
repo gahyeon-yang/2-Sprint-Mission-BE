@@ -1,4 +1,9 @@
 import { PrismaClient } from "@prisma/client";
+import {
+  ValidationError,
+  NotFoundError,
+  InternalServerError,
+} from "../error.js";
 
 const prisma = new PrismaClient();
 
