@@ -3,7 +3,7 @@ import {
   ValidationError,
   NotFoundError,
   InternalServerError,
-} from "./error.js";
+} from "../error.js";
 
 const prisma = new PrismaClient();
 
